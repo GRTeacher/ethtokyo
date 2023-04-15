@@ -1,18 +1,6 @@
 {
-  "name": "grteachertokyo",
-  "license": "UNLICENSED",
-  "scripts": {
-    "codegen": "graph codegen",
-    "build": "graph build",
-    "deploy": "graph deploy --node https://api.studio.thegraph.com/deploy/ grteachertokyo",
-    "create-local": "graph create --node http://localhost:8020/ grteachertokyo",
-    "remove-local": "graph remove --node http://localhost:8020/ grteachertokyo",
-    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 grteachertokyo",
-    "test": "graph test"
-  },
   "dependencies": {
-    "@graphprotocol/graph-cli": "0.46.1",
-    "@graphprotocol/graph-ts": "0.29.1"
-  },
-  "devDependencies": { "matchstick-as": "0.5.0" }
+    "@openzeppelin/contracts": "^4.8.3",
+    "@truffle/hdwallet-provider": "^2.1.9"
+  }
 }
