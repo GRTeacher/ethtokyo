@@ -1,0 +1,16 @@
+type AnsweredCorrectly @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  questionIndex: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type UserRegistered @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

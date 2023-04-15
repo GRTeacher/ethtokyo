@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Quiz
+    network: celo-alfajores
+    source:
+      address: "0x61a495F74E49768ADE3DAE4569A9775f169a4DF1"
+      abi: Quiz
+      startBlock: 17237724
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AnsweredCorrectly
+        - UserRegistered
+      abis:
+        - name: Quiz
+          file: ./abis/Quiz.json
+      eventHandlers:
+        - event: AnsweredCorrectly(indexed address,uint256)
+          handler: handleAnsweredCorrectly
+        - event: UserRegistered(indexed address)
+          handler: handleUserRegistered
+      file: ./src/quiz.ts
